@@ -1,0 +1,48 @@
+{
+  "is_enabled": true,
+  "streak_days":
+  [
+    {
+      "streak_day": 1,
+      "item_name": "gold",
+      "item_count": "100",
+      "item_sprite": "gold_icon_pack_0"
+    },
+    {
+      "streak_day": 2,
+      "item_name": "gem",
+      "item_count": "50",
+      "item_sprite": "gem_icon_pack_0"
+    },
+    {
+      "streak_day": 3,
+      "item_name": "gold",
+      "item_count": "200",
+      "item_sprite": "gold_icon_pack_1"
+    },
+    {
+      "streak_day": 4,
+      "item_name": "gem",
+      "item_count": "75",
+      "item_sprite": "gem_icon_pack_1"
+    },
+    {
+      "streak_day": 5,
+      "item_name": "gold",
+      "item_count": "300",
+      "item_sprite": "gold_icon_pack_2"
+    },
+    {
+      "streak_day": 6,
+      "item_name": "gem",
+      "item_count": "100",
+      "item_sprite": "gem_icon_pack_2"
+    },
+    {
+      "streak_day": 7,
+      "item_name": "gold",
+      "item_count": "500",
+      "item_sprite": "gold_icon_pack_3"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+    "m_Dictionary": {
+        "m_DictionaryValues": [
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "firstTime",
+                "value": "{\"m_Value\":false}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "autoPublish",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "createDefaultBuildsFolder",
+                "value": "{\"m_Value\":true}"
+            },
+            {
+                "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+                "key": "buildOutputDirList",
+                "value": "{\"m_Value\":\"D:/Development/Builds/unity-my-template/1.0.0_6;D:/Development/Builds/unity-my-template/1.0.0_5;D:/Development/Builds/unity-my-template/1.0.0_4;D:/Development/Builds/unity-my-template/1.0.0_2;D:/Development/Builds/unity-my-template/1.0.0_1;D:/Development/Builds/unity-my-template/1.0.0_0;D:/Development/Builds/unity-my-template;C:/Users/Nikita/Desktop/test0;C:/Users/Nikita/Desktop/test2;C:/Users/Nikita/Desktop/test\"}"
+            }
+        ]
+    }
+}

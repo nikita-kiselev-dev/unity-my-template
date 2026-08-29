@@ -1,0 +1,16 @@
+# Файлы, которые Tools/mutation-check.ps1 не мутирует.
+# Формат: <путь от корня проекта> # <причина>
+# Причина обязательна: строка без неё считается ошибкой скрипта, а не разрешением.
+#
+# Сюда попадает только то, что не выводится семантикой: наследники UnityEngine.Object и типы
+# с суффиксом Core отсеиваются автоматически (Mutator scan). Остаётся роль «тонкий адаптер к
+# внешней системе» — она не свойство типа и машинно не выводится. Явный список честнее эвристики:
+# «этот класс не тестируется» — решение автора, и оно должно быть записано с причиной.
+#
+# Допустимы маски: Assets/Framework/Foundation/Asset/*.cs
+
+Assets/Framework/Foundation/Asset/AddressableAssetProvider.cs # Адаптер к Addressables: поведение — это вызовы Addressables.LoadAssetAsync/Release и жизнь их хэндлов, вне рантайма Unity наблюдать нечем. Единственная точка проекта, которой прямой Addressables.* разрешён (AGENTS.md, секция «Ассеты»).
+Assets/Framework/Foundation/SaveLoad/FileSaveStorage.cs # Адаптер к файловой системе: содержательное поведение — запись/чтение/карантин файла, проверка требует настоящего диска и не даёт ничего сверх контракта ISaveStorage, который закрыт тестами SaveEnvelope.
+Assets/Framework/Foundation/SaveLoad/PlayerPrefsSaveStorage.cs # Адаптер к PlayerPrefs: статический API Unity, вне редактора не существует; собран только под define PLAYER_PREFS_SAVE_ENABLED.
+Assets/Framework/Foundation/UI/Views/ViewFactory.cs # Адаптер к Unity-UI: тело — выбор родительского canvas-transform и SetActive на живом GameObject плюс прогон IViewSetupStep. Владения ассетами у фабрики нет (инстанс создаёт scope вызывающего), проверять вне плеера нечего.
+Assets/Framework/Foundation/UI/Canvas/Scripts/CanvasProvider.cs # Адаптер к Unity-канвасу: LifecycleEntity, тело которого — Instantiate префаба, SetParent и sortingOrder на живых GameObject-ах.

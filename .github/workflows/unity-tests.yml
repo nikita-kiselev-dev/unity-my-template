@@ -1,0 +1,20 @@
+# EditMode-тесты Foundation/Features гоняются только там, где установлен Unity того же билда, что в
+# ProjectSettings/ProjectVersion.txt, и активирована лицензия — GitHub-hosted раннер не подходит.
+# Раннера с Unity у проекта сейчас нет, поэтому workflow лежит готовым и
+# запускается вручную: подключите self-hosted раннер с метками [self-hosted, windows, unity].
+name: Unity tests (self-hosted)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  unity-tests:
+    runs-on: [self-hosted, windows, unity]
+    steps:
+      - uses: actions/checkout@v4
+
+      # run-tests.ps1 запускает Unity в batchmode и не зависит от сгенерированных csproj,
+      # в отличие от быстрого агентского Tools/fast-tests.ps1.
+      - name: EditMode tests
+        shell: powershell
+        run: .\Tools\run-tests.ps1

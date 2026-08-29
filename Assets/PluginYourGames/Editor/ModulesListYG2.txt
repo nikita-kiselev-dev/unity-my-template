@@ -1,0 +1,10 @@
+Authorization v1.023
+EnvirData v1.0031
+InterstitialAdv v1.02
+Localization v1.02
+Metrica v1.02
+Payments v1.02
+RewardedAdv v1.011
+ServerTime v1.02
+StickyAdv v1.0
+Storage v1.021

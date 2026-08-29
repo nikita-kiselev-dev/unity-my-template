@@ -1,0 +1,79 @@
+{
+  "permissions": {
+    "allow": ["Read(*)"]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-scope-baseline.ps1\"",
+            "timeout": 60,
+            "statusMessage": "scope-baseline"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-fast-tests.ps1\"",
+            "timeout": 300,
+            "statusMessage": "fast-tests"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-tdd-check.ps1\"",
+            "timeout": 120,
+            "statusMessage": "tdd-check"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-naming-check.ps1\"",
+            "timeout": 120,
+            "statusMessage": "naming-check"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-interaction-check.ps1\"",
+            "timeout": 120,
+            "statusMessage": "interaction-check"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-generator-hash.ps1\"",
+            "timeout": 60,
+            "statusMessage": "generator-hash"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-docs-coverage.ps1\"",
+            "timeout": 120,
+            "statusMessage": "docs-coverage"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-scope-check.ps1\"",
+            "timeout": 60,
+            "statusMessage": "scope-check"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-ticket-check.ps1\"",
+            "timeout": 60,
+            "statusMessage": "ticket-check"
+          },
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -ExecutionPolicy Bypass -File \"${CLAUDE_PROJECT_DIR:-.}/Tools/hook-acceptance-check.ps1\"",
+            "timeout": 60,
+            "statusMessage": "acceptance-check"
+          }
+        ]
+      }
+    ]
+  }
+}

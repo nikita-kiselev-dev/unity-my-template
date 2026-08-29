@@ -1,0 +1,30 @@
+﻿# Сознательные исключения из Tools/naming-check.ps1.
+# Формат: <токен> # <причина>
+# Причина обязательна: строка без неё считается ошибкой скрипта, а не разрешением.
+# Токен — имя типа, имя файла (без .cs) или полный namespace.
+
+IConditionalEntity # Слова Control в имени нет; ILifecycleCondition потерял бы то, что интерфейс реализует сама сущность (Naming.md, «Зафиксированные исключения»).
+ViewWrapper # Обёртка и есть роль типа; internal, из фич не виден.
+Framework.Foundation.Scenes # Вложенный SceneConstants.Scenes — не тип верхнего уровня; обращение всегда квалифицировано через SceneConstants.
+MonoView # Файл содержит неарный MonoView и generic MonoView<TViewModel> — обе части одного контракта.
+LogChannel # То же: LogChannel<T>.
+AutoTypeEntry # Файл держит AutoTypeEntry и его enum AutoTypeKind — enum описывает единственное поле структуры.
+SaveReadResult # Файл держит SaveReadResult и его enum SaveReadStatus — статус существует только внутри результата.
+ViewEvent # Файл держит перечисления событий view одной группой.
+
+# Пустые интерфейсы, которые не являются мёртвыми маркерами: у них есть роль в системе
+# (контракт шины, ключ DI, публичная граница фичи), и удаление сломало бы контракт.
+ISignal # Контракт шины: Trigger<T>/Subscribe<T> ограничены этим типом, generic-constraint без него не выразить.
+IAssetScope # Наследует IAssetProvider + IDisposable: собственных членов не нужно, роль — сузить время жизни.
+IDisposableLifecycleWrapper # Наследует ILifecycleDecorator + IDisposable: маркер «обёртку надо диспозить».
+IClickerCore # Публичная граница фичи: наследует IEntityStatus, наружу отдаёт только статус.
+IDailyBonusCore # То же.
+ILocalizationController # То же: наследует IEntityStatus.
+ILoadingCurtainController # То же.
+
+# Группы Addressables, которые создаёт и переписывает пакет: адрес там задаёт не конвенция.
+Localization-Assets-Shared # Адрес shared-таблицы пишет пакет Localization путём ассета на момент записи; путь устарел при переносе таблиц, а руками править данные пакета нельзя. Ссылки идут по GUID, поэтому адрес ни на что не влияет.
+
+# Файлы с несколькими публичными типами верхнего уровня (правило — предупреждение).
+IAssetProviderDiagnostics # Диагностический контракт и три его read-only-снимка описывают один срез состояния провайдера.
+VersionedTestData # Набор тестовых схем сейва одного сценария версионирования; по файлу на схему — семь файлов ради семи заголовков.

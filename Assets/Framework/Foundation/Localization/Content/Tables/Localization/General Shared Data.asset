@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: General Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: General
+  m_TableCollectionNameGuidString: 81d3120efc2b4ba42a4e9e3c2bc6c02a
+  m_Entries:
+  - m_Id: 56821476139008
+    m_Key: application_name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398325285920768
+    m_Key: congratulations
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5781877313413120
+    m_Key: dailybonus/subtitle
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253723959296
+    m_Key: dailybonus/title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3302611834269696
+    m_Key: loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5773882961600512
+    m_Key: play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833410
+    m_Key: settings/language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833409
+    m_Key: settings/music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833408
+    m_Key: settings/sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775746056192
+    m_Key: settings/title
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125124
+    m_Key: time/day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125125
+    m_Key: time/days
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125122
+    m_Key: time/minute
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125123
+    m_Key: time/minutes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125126
+    m_Key: time/month
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125127
+    m_Key: time/months
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125120
+    m_Key: time/second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125121
+    m_Key: time/seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5862862763761664
+    m_Key: time/today
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125128
+    m_Key: time/year
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125129
+    m_Key: time/years
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5773882978377728
+    m_Key: website
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 8243158756656414744
+  references:
+    version: 2
+    RefIds:
+    - rid: 8243158756656414744
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1720607717332

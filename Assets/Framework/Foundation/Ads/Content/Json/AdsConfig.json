@@ -1,0 +1,9 @@
+{
+  "is_enabled": true,
+  "banner_enabled": true,
+  "interstitial_enabled": true,
+  "rewarded_enabled": true,
+  "interstitial_cooldown_seconds": 60,
+  "interstitial_session_start_cooldown_seconds": 30,
+  "rewarded_resets_interstitial_cooldown": true
+}

@@ -1,0 +1,20 @@
+﻿{
+  "is_enabled": true,
+  "clicker_levels": [
+    {
+      "income_per_click": 1,
+      "upgrade_cost": 10,
+      "tier": "Tier5"
+    },
+    {
+      "income_per_click": 5,
+      "upgrade_cost": 50,
+      "tier": "Tier4"
+    },
+    {
+      "income_per_click": 20,
+      "upgrade_cost": 200,
+      "tier": "Tier3"
+    }
+  ]
+}

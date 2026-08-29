@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: DailyBonus
+  m_EditorClassIdentifier: 
+  m_GroupName: DailyBonus
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 15a724d77c4defe4d90b16aeae4aa8b2
+  m_SerializeEntries:
+  - m_GUID: 7c3a504bd9d76a54dab2122a9f34f7d7
+    m_Address: DailyBonusPopup
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 0c1d0e9f20c1bec4f86e4abed40ad5d2
+    m_Address: DailyBonusLastDay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c6ac792daa86e674184b7e4fe6925304
+    m_Address: DailyBonusNextDay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 64835155e7cc5854eb93ecd4ab78a81f
+    m_Address: DailyBonusPreviousDay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b64f7a339fed08847bcb5b4f7a82bfbe
+    m_Address: DailyBonusToday
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d8e197931a7e48f68249c422079a2db5
+    m_Address: DailyBonusConfig
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b0024629073db604b823cbf80e85480d
+    m_Address: DailyBonusTodayLastDay
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: e31c21e61c17ab148a2cd5df277a3421, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 97f4c689bba08e4498da224d92ab2b54, type: 2}
+    - {fileID: 11400000, guid: 74015699ab843814b88e47d0406000ed, type: 2}

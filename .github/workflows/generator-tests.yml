@@ -1,0 +1,23 @@
+# Единственные тесты проекта, которым не нужен Unity: source generator собирается обычным
+# .NET SDK, поэтому его можно гонять на GitHub-hosted раннере на каждый push.
+# EditMode-тесты Foundation/Features требуют установленного Unity — см. unity-tests.yml.
+name: Generator tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  generator-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: dotnet test
+        run: dotnet test Tools/AutoDecorators.Generator.Tests/AutoDecorators.Generator.Tests.csproj --nologo

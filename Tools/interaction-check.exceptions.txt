@@ -1,0 +1,21 @@
+# Сознательные исключения из Tools/interaction-check.ps1.
+# Формат: <правило>:<токен> # <причина>
+# Причина обязательна: строка без неё считается ошибкой скрипта, а не разрешением.
+#
+# Токен по правилам:
+#   member                      -> <Тип>.<Член> или <Тип> (весь тип целиком)
+#   service-locator             -> имя типа
+#   static-instance             -> имя типа
+#   signal-without-subscriber   -> имя сигнала
+#   cross-feature-concrete-type -> <Фича>-><Тип>
+#
+# Исключение делится на два вида. Постоянное описывает, почему правило тут не применимо.
+# Временное обязано ссылаться на тикет: без ссылки «пока» становится «навсегда».
+
+# --- Постоянные -------------------------------------------------------------------------------
+
+member:ReactiveSignalBus.Subject # Держатель стрима — private вложенный класс шины; наружу шина отдаёт только IDisposable от Subscribe.
+service-locator:ConfigRegistrationBuilder # Реализует VContainer IInstanceProvider: подпись SpawnInstance(IObjectResolver) задаёт контейнер, а не проект.
+service-locator:SceneStarter # Резолвит LifecycleEntity после прогрева конфигов: инжект полем создал бы их на Build() scope-а, то есть до прогрева (Initialization-LifecycleEntity.md).
+signal-without-subscriber:AdStartedSignal # Объявленная граница расширения: Foundation не вправе знать игровой код, который ставит геймплей на паузу (Ads.md).
+signal-without-subscriber:AdFinishedSignal # То же: точка, куда игровой код цепляет возобновление после рекламы.

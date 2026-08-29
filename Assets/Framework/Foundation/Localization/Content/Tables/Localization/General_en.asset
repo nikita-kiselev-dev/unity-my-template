@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: General_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 81d3120efc2b4ba42a4e9e3c2bc6c02a, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 56821476139008
+    m_Localized: Unity Template
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775746056192
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833408
+    m_Localized: Sounds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833409
+    m_Localized: Music
+    m_Metadata:
+      m_Items: []
+  - m_Id: 99775762833410
+    m_Localized: Language
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3302611834269696
+    m_Localized: Loading
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253723959296
+    m_Localized: Daily Bonus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125120
+    m_Localized: Second
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125121
+    m_Localized: Seconds
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125122
+    m_Localized: Minute
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125123
+    m_Localized: Minutes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125124
+    m_Localized: Day
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125125
+    m_Localized: Days
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125126
+    m_Localized: Month
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125127
+    m_Localized: Months
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125128
+    m_Localized: Year
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5412253749125129
+    m_Localized: Years
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5773882961600512
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5773882978377728
+    m_Localized: WebSite
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5781877313413120
+    m_Localized: Get your daily reward!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5862862763761664
+    m_Localized: Today
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9398325285920768
+    m_Localized: Congratulations
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

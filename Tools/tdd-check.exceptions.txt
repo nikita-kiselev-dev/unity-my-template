@@ -1,0 +1,22 @@
+# Исключения гейта tdd-check. Формат строки: <правило>:<тест> # <причина>
+# Тест указывается полным именем (Namespace.Class.Method) или коротким (Class.Method).
+# Причина обязательна: строка без причины считается ошибкой скрипта, а не разрешением.
+#
+# Правила:
+#   test-never-failed    — новый тест не имел красного прогона до зелёного.
+#   green-test-rewritten — тело теста, зелёного в HEAD, изменено.
+#
+# Законные поводы:
+#   - тест-контракт, написанный после кода по соглашению проекта (SaveBlob roundtrip,
+#     тесты-инварианты скана DI, snapshot-тесты генератора — см. Testing-TDD);
+#   - переименование теста без смены смысла (для гейта это новый метод);
+#   - осознанная смена контракта — причина обязана ссылаться на тикет.
+#
+# Исключение можно задать на классе целиком (<правило>:<Класс>), а не на каждом методе.
+
+green-test-rewritten:InstanceRegistryTests.Track_MovesInstanceToNewKey_WhenTrackedTwice # осознанная смена контракта: Track получил владельца инстанса, тело теста изменено только вызовом новой сигнатуры
+test-never-failed:ResultPropertyTests # property-based инвариант на существующий корректный код: красного прогона не бывает без порчи рабочего кода
+test-never-failed:ClockPropertyTests # property-based инвариант на существующий корректный код: красного прогона не бывает без порчи рабочего кода
+test-never-failed:ItemsDataPropertyTests # property-based инвариант на существующий корректный код: красного прогона не бывает без порчи рабочего кода
+test-never-failed:SaveBlobPropertyTests # property-based roundtrip-контракт: test-after по таблице Testing-TDD
+test-never-failed:InflightLoadsTests # процессный промах агента, а не свойство тестов: заглушка InflightLoads случайно взяла верный примитив (UniTaskCompletionSource<T> сам держит несколько ожидающих), поэтому первый прогон вышел зелёным. Красная фаза получена позже повторным внесением исходного дефекта (.Preserve() над async-задачей): журнал .agent-state/FastTests/history.jsonl, 2026-08-25T18:14:42Z — Complete_ResumesEveryJoiner_WhenManyWaitConcurrently и Complete_ResumesRemainingJoiners_WhenOneWasCancelled падают с InvalidOperationException «Already continuation registered». Что тесты пиннят поведение, а не исполняют строки, подтверждено независимо: mutation-check по InflightLoads.cs — 4 мутанта, 4 убито, выживших 0
