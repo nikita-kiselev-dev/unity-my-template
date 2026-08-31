@@ -1,5 +1,5 @@
 # Stop-хук: прогоняет Tools/acceptance-check.ps1 и возвращает ход, если тикет ждёт только
-# ответа пользователя — агент обязан спросить через AskUserQuestion, а не закончить ход молча.
+# ответа пользователя — агент обязан задать двухвариантный вопрос, а не закончить ход молча.
 # Спрашивают только про тикеты, которые правили в этой сессии: их список хук копит сам и
 # передаёт скрипту через -Files (раздел «Тикеты этой сессии»).
 # В хэш идёт не только отчёт, но и отпечаток рабочего дерева: после ответа «нет» и доработки
@@ -121,13 +121,13 @@ Set-Content -Path $stamp -Value $hash -Encoding utf8
 [Console]::Error.WriteLine(@"
 acceptance-check: work is done, only user-verification items are left.
 $report
-Do not end the turn silently. Ask via AskUserQuestion with exactly these two options
-(the tool requires at least two; findings go through the built-in "Other" free text):
+Do not end the turn silently. Use the agent's structured user-input tool when available;
+otherwise ask the same two choices as a concise plain-text question:
   1. Yes, everything is fine - close the ticket
   2. Not verified yet - I will come back to it
 On option 1: tick every @user item, set status: Done, bump the updated field.
 On option 2: change nothing, leave the ticket In Progress, end the turn.
-On "Other" (free text): add the findings to the ticket as new items without the @user
-marker and keep working. Do not add a "No" option - "Other" already covers it.
+On free-text findings: add them to the ticket as new items without the @user marker and keep
+working. Do not add a "No" option - free text already covers it.
 "@)
 exit 2

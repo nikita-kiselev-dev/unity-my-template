@@ -93,8 +93,9 @@ foreach ($ticket in $found) {
     Write-Output "$($ticket.Ticket): $($ticket.Items.Count) unchecked item(s), all marked @user"
 }
 
-Write-Output "Ask the user via AskUserQuestion: is everything fine, can the ticket be closed?"
-Write-Output "Options: 'Yes, close the ticket' -> tick the @user items, set status: Done, bump updated."
-Write-Output "         'Not verified yet' -> change nothing, leave the ticket In Progress."
-Write-Output "Findings come through the built-in 'Other' free text -> add them as items and keep working."
+Write-Output "Ask the user whether everything is fine and the ticket can be closed."
+Write-Output "Use structured input when available; otherwise ask the same choices in plain text:"
+Write-Output "  'Yes, close the ticket' -> tick the @user items, set status: Done, bump updated."
+Write-Output "  'Not verified yet' -> change nothing, leave the ticket In Progress."
+Write-Output "Free-text findings -> add them as items and keep working."
 exit 1
